@@ -1,0 +1,17 @@
+.container
+  .row
+    .well.form-container.col-sm-8.col-sm-offset-2
+      %h3 Add a Business
+      %hr
+      %form
+        .row
+          .form-group.col-sm-8
+            %label(for="rating") Rating
+            <br>
+            = select_tag :rating, options_for_select([['1 Star', 1], ['2 Stars', 2], ['3 Stars', 3], ['4 Stars', 4], ['5 Stars', 5]]), id: 'rating'
+        .row
+          .form-group.col-sm-12
+            %label(for="address") Review
+            %textarea(class="form-control" id="address" rows=5 placeholder="Write your review here")
+        .form-group
+          %button(type="submit" class="btn btn-primary") Submit

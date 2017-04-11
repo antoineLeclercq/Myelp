@@ -1,0 +1,24 @@
+.container
+  .row
+    .well.form-container.col-sm-8.col-sm-offset-2
+      %h3 Sign In
+      %hr
+      %form
+        .row
+          .form-group.col-sm-8
+            %label(for="name") Full Name
+            %input(type="text" class="form-control" id="name" placeholder="ex: Antoine Leclercq")
+        .row
+          .form-group.col-sm-8
+            %label(for="name") City and State
+            %input(type="text" class="form-control" id="name" placeholder="ex: New York, NY")
+        .row
+          .form-group.col-sm-8
+            %label(for="email") Email address
+            %input(type="email" class="form-control" id="email" placeholder="Email")
+        .row
+          .form-group.col-sm-8
+            %label(for="password") Password
+            %input(type="password" class="form-control" id="password")
+        .form-group
+          %button(type="submit" class="btn btn-primary") Sign Up

@@ -1,0 +1,16 @@
+.container
+  .row
+    .well.form-container.col-sm-8.col-sm-offset-2
+      %h3 Sign Up
+      %hr
+      %form
+        .row
+          .form-group.col-sm-8
+            %label(for="email") Email address
+            %input(type="email" class="form-control" id="email" placeholder="Email")
+        .row
+          .form-group.col-sm-8
+            %label(for="password") Password
+            %input(type="password" class="form-control" id="password")
+        .form-group
+          %button(type="submit" class="btn btn-primary") Sign In

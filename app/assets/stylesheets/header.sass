@@ -1,0 +1,29 @@
+.navbar
+  padding: 0 10%
+  border: none
+  border-radius: 0px
+  background: map-get($colors, red)
+  a, a:hover
+    color: white
+
+.navbar-header
+  button
+    border-color: white
+    .icon-bar
+      background: white
+
+.navbar-nav li a:hover
+  background: map-get($colors, red)
+
+.navbar-right
+  .dropdown
+    .glyphicon
+      margin: 0 10px 0 0
+  .open
+    > a, a:focus, a:hover
+      background: map-get($colors, dark-red)
+      color: white
+    li a:hover
+      background: map-get($colors, red)
+      color: white
+

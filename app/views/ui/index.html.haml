@@ -1,0 +1,6 @@
+.container
+  %ul
+    - Dir.glob('app/views/ui/*.html.haml') do |file|
+      - filename = File.basename(file, '.html.haml')
+      %li
+        = link_to filename, "/ui/#{filename}"

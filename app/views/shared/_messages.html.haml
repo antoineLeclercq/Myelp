@@ -1,0 +1,6 @@
+- flash.each do |type, message|
+  .container
+    %div(class="alert alert-#{message_type_class_name(type)} alert-dismissible fade in")
+      %button(type="button" class="close" aria-label="Close" data-dismiss="alert")
+        %span(aria-hidden="true") &times;
+      = content_tag :div, message, :id => "flash_#{type}" if message.is_a?(String)

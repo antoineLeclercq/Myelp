@@ -1,0 +1,36 @@
+%nav.navbar
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to 'myelp', '', class: 'navbar-brand'
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          = link_to 'Businesses', ''
+        %li.active
+          = link_to 'Recent Reviews', ''
+      %ul.nav.navbar-nav.navbar-right
+        %li.active
+          = link_to 'Sign In', ''
+        %li.active
+          = link_to 'Sign Up', ''
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            First Last
+            %span.caret
+          %ul.dropdown-menu
+            %li
+              = link_to '' do
+                %i.glyphicon.glyphicon-user
+                %span View Profile
+            %li.divider{:role => "separator"}
+            %li
+              = link_to '' do
+                %i.glyphicon.glyphicon-circle-arrow-left
+                %span Sign Out
