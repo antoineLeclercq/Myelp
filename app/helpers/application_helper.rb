@@ -8,4 +8,13 @@ module ApplicationHelper
 
     types_name[type]
   end
+
+  def business_address(business)
+    business.street + ', ' + business.city + ', ' + business.state + ' ' + business.zipcode
+  end
+
+  def phone_number(phone)
+    phone_string = phone.to_s
+    "(#{phone_string.slice(0..2)}) #{phone_string.slice(3..5)}-#{phone_string.slice(6..9)}"
+  end
 end
