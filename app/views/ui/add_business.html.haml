@@ -10,8 +10,18 @@
             %input(type="text" class="form-control" id="name" placeholder="ex: Chipotle")
         .row
           .form-group.col-sm-8
-            %label(for="address") Address
-            %input(type="text" class="form-control" id="address" placeholder="ex: 310W 36th Sreet, New York, NY 10001")
+            %label(for="street") Street Address
+            %input(type="text" class="form-control" id="street" placeholder="ex: 310W 36th Sreet")
+        .row
+          .form-group.col-sm-4
+            %label(for="city") City
+            %input(type="text" class="form-control" id="city" placeholder="ex: New York")
+          .form-group.col-sm-2
+            %label(for="state") State
+            %input(type="text" class="form-control" id="state" placeholder="ex: NY")
+          .form-group.col-sm-2
+            %label(for="zipcode") Zipcode
+            %input(type="text" class="form-control" id="zipcode" placeholder="ex: 10001")
         .row
           .form-group.col-sm-8
             %label(for="area") Area
