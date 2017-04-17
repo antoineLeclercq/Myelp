@@ -12,7 +12,9 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         %li.active
-          = link_to 'Businesses', ''
+          = link_to 'Businesses', businesses_path
+        %li.active
+          = link_to 'Add a Business', new_business_path
         %li.active
           = link_to 'Recent Reviews', ''
       %ul.nav.navbar-nav.navbar-right
