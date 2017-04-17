@@ -1,0 +1,28 @@
+.container
+  .row
+    .well.form-container.col-sm-8.col-sm-offset-2
+      %h3 Sign Up
+      %hr
+      = form_for @user do |f|
+        = render 'shared/errors', model: @user
+        .row
+          .form-group.col-sm-8
+            = f.label :full_name, 'Full Name'
+            = f.text_field :full_name, class: 'form-control', placeholder: 'ex: Bruce Wayne'
+        .row
+          .form-group.col-sm-6
+            = f.label :city
+            = f.text_field :city, class: 'form-control', placeholder: 'ex: New York'
+          .form-group.col-sm-2
+            = f.label :state
+            = f.text_field :state, class: 'form-control', placeholder: 'ex: NY'
+        .row
+          .form-group.col-sm-8
+            = f.label :email
+            = f.email_field :email, class: 'form-control', placeholder: 'ex: email@exmaple.com'
+        .row
+          .form-group.col-sm-8
+            = f.label :password
+            = f.password_field :password, class: 'form-control'
+        .form-group
+          = f.submit 'Sign Up', class: 'btn btn-primary'

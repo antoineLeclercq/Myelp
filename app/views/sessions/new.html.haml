@@ -1,0 +1,16 @@
+.container
+  .row
+    .well.form-container.col-sm-8.col-sm-offset-2
+      %h3 Sign In
+      %hr
+      = form_tag sign_in_path do
+        .row
+          .form-group.col-sm-8
+            = label_tag :email
+            = email_field_tag :email, nil, class: 'form-control', placeholder: 'Your Email'
+        .row
+          .form-group.col-sm-8
+            = label_tag :password
+            = password_field_tag :password, nil, class: 'form-control', placeholder: 'Your Password'
+        .form-group
+          = submit_tag 'Sign In', class: 'btn btn-primary'

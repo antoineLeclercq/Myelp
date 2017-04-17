@@ -5,7 +5,7 @@
       %hr
       = form_for @business do |f|
         - if @business.errors.any?
-          = render 'shared/errors'
+          = render 'shared/errors', model: @business
         .row
           .form-group.col-sm-8
             = f.label :name
