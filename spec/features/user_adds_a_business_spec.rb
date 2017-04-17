@@ -24,6 +24,7 @@ feature 'user can add a business' do
     fill_in 'State', with: 'NY'
     fill_in 'Zipcode', with: '10000'
     fill_in 'Area', with: 'Midtown'
+    fill_in 'Phone', with: '1112223333'
     click_button 'Create Business'
   end
 
@@ -39,6 +40,7 @@ feature 'user can add a business' do
     fill_in 'State', with: 'NY'
     fill_in 'Zipcode', with: '10000'
     fill_in 'Area', with: 'Midtown'
+    fill_in 'Phone', with: '111-222-3333'
     click_button 'Create Business'
   end
 

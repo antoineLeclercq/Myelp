@@ -23,7 +23,7 @@
             = f.text_field :state, class: 'form-control', placeholder: 'ex: NY'
           .form-group.col-sm-2
             = f.label :zipcode
-            = f.text_field :zipcode, class: 'form-control', placeholder: 'ex: 10001'
+            = f.text_field :zipcode, class: 'form-control', placeholder: 'ex: 10001', minlength: 5, maxlength: 5
         .row
           .form-group.col-sm-8
             = f.label :area
@@ -31,6 +31,6 @@
         .row
           .form-group.col-sm-8
             = f.label :phone
-            = f.text_field :phone, class: 'form-control', placeholder: 'ex: 111-222-4444'
+            = f.phone_field :phone, class: 'form-control', placeholder: 'ex: 1112224444', minlength: 10, maxlength: 10
         .form-group
           = f.submit class: 'btn btn-primary'
