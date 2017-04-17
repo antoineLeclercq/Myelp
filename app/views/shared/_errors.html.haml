@@ -1,5 +1,6 @@
-.alert.alert-danger
-  %h5 Please fix the following errors:
-  %ul
-    - model.errors.full_messages.each do |message|
-      %li #{message}
+- if model.errors.any?
+  .alert.alert-danger
+    %h5 Please fix the following errors:
+    %ul
+      - model.errors.full_messages.each do |message|
+        %li #{message}

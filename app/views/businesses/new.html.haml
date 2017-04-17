@@ -4,8 +4,7 @@
       %h3 Add a Business
       %hr
       = form_for @business do |f|
-        - if @business.errors.any?
-          = render 'shared/errors', model: @business
+        = render 'shared/errors', model: @business
         .row
           .form-group.col-sm-8
             = f.label :name

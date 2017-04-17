@@ -18,21 +18,23 @@
         %li.active
           = link_to 'Recent Reviews', ''
       %ul.nav.navbar-nav.navbar-right
-        %li.active
-          = link_to 'Sign In', ''
-        %li.active
-          = link_to 'Sign Up', ''
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-            First Last
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              = link_to '' do
-                %i.glyphicon.glyphicon-user
-                %span View Profile
-            %li.divider{:role => "separator"}
-            %li
-              = link_to '' do
-                %i.glyphicon.glyphicon-circle-arrow-left
-                %span Sign Out
+        - if logged_in?
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              #{current_user.full_name}
+              %span.caret
+            %ul.dropdown-menu
+              %li
+                = link_to '' do
+                  %i.glyphicon.glyphicon-user
+                  %span View Profile
+              %li.divider{:role => "separator"}
+              %li
+                = link_to sign_out_path, method: :delete do
+                  %i.glyphicon.glyphicon-circle-arrow-left
+                  %span Sign Out
+        - else
+          %li.active
+            = link_to 'Sign In', sign_in_path
+          %li.active
+            = link_to 'Sign Up', sign_up_path
