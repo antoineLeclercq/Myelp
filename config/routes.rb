@@ -10,4 +10,9 @@ Rails.application.routes.draw do
 
   resources :businesses, only: [:new, :create, :index, :show]
   resources :users, only: [:create]
+  resources :reviews, only: [] do
+    collection do
+      get :recent, to: :recent
+    end
+  end
 end

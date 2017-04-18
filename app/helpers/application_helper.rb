@@ -17,4 +17,8 @@ module ApplicationHelper
     phone_string = phone.to_s
     "(#{phone_string.slice(0..2)}) #{phone_string.slice(3..5)}-#{phone_string.slice(6..9)}"
   end
+
+  def format_date(date)
+    date.strftime('%m/%d/%Y')
+  end
 end
