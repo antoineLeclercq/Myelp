@@ -5,7 +5,7 @@ describe UsersController do
     it 'sets @user' do
       get :new
 
-      expect(assigns[:user]).to be_present
+      expect(assigns[:user]).to be_a(User)
     end
   end
 
@@ -13,7 +13,7 @@ describe UsersController do
     it 'sets @user' do
       post :create, params: { user: Fabricate.attributes_for(:user) }
 
-      expect(assigns[:user]).to be_present
+      expect(assigns[:user]).to be_a(User)
     end
 
     it 'saves new user' do

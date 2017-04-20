@@ -21,4 +21,8 @@ module ApplicationHelper
   def format_date(date)
     date.strftime('%m/%d/%Y')
   end
+
+  def rating_options
+    [['1 Star', 1], ['2 Stars', 2], ['3 Stars', 3], ['4 Stars', 4], ['5 Stars', 5]]
+  end
 end

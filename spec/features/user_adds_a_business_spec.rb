@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 feature 'user can add a business' do
+  given(:user) { Fabricate(:user) }
+
   scenario 'user adds a business with correct information' do
+    sign_in
+
     visit new_business_path
 
     create_business
@@ -10,6 +14,8 @@ feature 'user can add a business' do
   end
 
   scenario 'user adds a busines with invalid information' do
+    sign_in
+
     visit new_business_path
 
     create_business_with_invalid_info

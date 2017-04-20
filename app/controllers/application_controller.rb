@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user
   end
+
+  def require_user
+    redirect_to sign_in_path unless logged_in?
+  end
 end

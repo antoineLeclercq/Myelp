@@ -1,0 +1,24 @@
+- with_business ||= false
+
+.row
+  %hr
+  .row.review
+    %figure.col-sm-1
+      = image_tag '60x60.png'
+    .col-sm-2
+      %p.name
+        = link_to '' do
+          %strong #{review.user_full_name}
+      %p.location
+        %strong #{review.user_location}
+      %p #{review.user_reviews_count} #{'review'.pluralize(review.user_reviews_count)}
+      %p
+        = format_date review.created_at
+    .review-content.col-sm-8
+      - if with_business
+        %h4
+          = link_to review.business.name, '' #TODO: business_path(review.business)
+          \-
+          %small= business_address(review.business)
+      %h5 Rating: #{review.rating}/5
+      = simple_format review.content

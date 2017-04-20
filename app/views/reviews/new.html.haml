@@ -1,0 +1,21 @@
+.container
+  .row
+    .well.form-container.col-sm-8.col-sm-offset-2
+      %h3 Write a Review
+      %h4
+        for
+        = link_to @business.name, business_path(@business)
+      %hr
+      = form_for [@business, @review] do |f|
+        = render 'shared/errors', model: @review
+        .row
+          .form-group.col-sm-8
+            = f.label :rating
+            %br
+            = f.select :rating, rating_options
+        .row
+          .form-group.col-sm-12
+            = f.label :content, 'Review'
+            = f.text_area :content, class: 'form-control', rows: 4, placeholder: 'Write your review here'
+        .form-group
+          = f.submit 'Submit Review', class: 'btn btn-primary'

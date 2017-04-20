@@ -18,7 +18,7 @@ describe ApplicationController do
       session[:user_id] = user.id
       controller.current_user
 
-      expect(assigns[:current_user]).to be_present
+      expect(assigns[:current_user]).to be_a(User)
     end
 
     it 'is also a helper method' do
@@ -35,6 +35,13 @@ describe ApplicationController do
 
     it "returns false if there isn't a current user" do
       expect(controller.logged_in?).to eq(false)
+    end
+  end
+
+  describe '#require_user' do
+    it 'returns nil if user is logged in' do
+      session[:user_id] = user.id
+      expect(controller.require_user).to be_nil
     end
   end
 end

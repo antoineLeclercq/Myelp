@@ -1,4 +1,6 @@
 class BusinessesController < ApplicationController
+  before_action :require_user, only: [:new, :create]
+
   def index
     @businesses = Business.all.order(created_at: :desc)
   end
@@ -15,6 +17,10 @@ class BusinessesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @business = Business.find(params[:id])
   end
 
   private

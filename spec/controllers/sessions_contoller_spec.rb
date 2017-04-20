@@ -39,13 +39,13 @@ describe SessionsController do
 
     context 'invalid credentials' do
       it 'sets unspecific error message' do
-        post :create, params: { email: user.email, password: 'invalid password' }
+        post :create, params: { email: 'invalid email', password: 'invalid password' }
 
         expect(flash[:error]).to be_present
       end
 
       it 'redirects sign in path' do
-        post :create, params: { email: user.email, password: 'invalid password' }
+        post :create, params: { email: 'invalid email', password: 'invalid password' }
 
         expect(response).to redirect_to(sign_in_path)
       end
