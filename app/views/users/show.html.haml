@@ -1,0 +1,13 @@
+.container
+  .business-details
+    .row
+      .col-sm-4
+        = image_tag '250x250.png'
+      .col-sm-4
+        %h1= @user.full_name
+        %h4= @user.location
+        %p #{@user.reviews.count} reviews
+
+  .reviews
+    %h3 Reviews
+    = render @user.reviews, with_business: true

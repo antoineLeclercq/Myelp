@@ -47,4 +47,12 @@ describe UsersController do
       end
     end
   end
+
+  describe 'GET show' do
+    let(:user) { Fabricate(:user) }
+    it 'sets @user with the user whose profile is being visited' do
+      get :show, params: { id: user.id }
+      expect(assigns[:user]).to eq(user)
+    end
+  end
 end

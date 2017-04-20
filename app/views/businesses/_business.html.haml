@@ -21,11 +21,11 @@
           %p.phone
             = phone_number(business.phone)
 
-
-    .row.review-preview
-      .col-sm-12
-        %figure
-          = image_tag '30x30.png'
-        %p
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec velit non urna ornare tempor sed at justo. Nullam eu nisl sem. Integer non maximus purus...
-          = link_to 'read more', ''
+    - if business.reviews.any?
+      .row.review-preview
+        .col-sm-12
+          %figure
+            = image_tag '30x30.png'
+          %p
+            = review_preview(business.reviews.first)
+            = link_to 'read more', business_path(business)

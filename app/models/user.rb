@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :reviews
+  has_many :reviews, -> { order(created_at: :desc) }
 
   validates :full_name, presence: true
   validates :city, presence: true

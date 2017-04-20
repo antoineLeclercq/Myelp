@@ -7,7 +7,7 @@
       = image_tag '60x60.png'
     .col-sm-2
       %p.name
-        = link_to '' do
+        = link_to user_path(review.user) do
           %strong #{review.user_full_name}
       %p.location
         %strong #{review.user_location}
@@ -17,7 +17,7 @@
     .review-content.col-sm-8
       - if with_business
         %h4
-          = link_to review.business.name, '' #TODO: business_path(review.business)
+          = link_to review.business.name, business_path(review.business)
           \-
           %small= business_address(review.business)
       %h5 Rating: #{review.rating}/5

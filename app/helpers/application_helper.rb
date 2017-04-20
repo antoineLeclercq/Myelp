@@ -25,4 +25,9 @@ module ApplicationHelper
   def rating_options
     [['1 Star', 1], ['2 Stars', 2], ['3 Stars', 3], ['4 Stars', 4], ['5 Stars', 5]]
   end
+
+  def review_preview(review)
+    return review.content if review.content.size <= 180
+    "#{review.content[0...180]}..."
+  end
 end
