@@ -11,8 +11,8 @@
             = link_to business.name, business_path(business)
           %p
             %strong Rating:
-            4.0/5
-            %small (250 reviews)
+            #{business.average_rating}/5
+            %small (#{business.reviews.count} reviews)
         %section.location.pull-right
           %p.area
             = business.area
